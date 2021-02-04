@@ -1,22 +1,19 @@
 import * as React from 'react'
-import { Text, TouchableOpacity } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
 import { ThemeProvider } from 'styled-components/native'
 import { registerRootComponent } from 'expo'
 
-import Screen from '@/components/Screen'
+import Routes from '@/routes'
 import useTheme from '@/hooks/useTheme'
 
 const App = () => {
-  const { theme, toggleTheme } = useTheme()
+  const { theme } = useTheme()
 
   return (
     <ThemeProvider theme={theme}>
-      <Screen>
-        <Text>{theme.background}</Text>
-        <TouchableOpacity onPress={toggleTheme}>
-          <Text>Toggle</Text>
-        </TouchableOpacity>
-      </Screen>
+      <NavigationContainer>
+        <Routes />
+      </NavigationContainer>
     </ThemeProvider>
   )
 }
