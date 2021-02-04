@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "This is a sample project to show how to create and react native application using expo and your ecosystem",
+    "githubUrl": "https://github.com/elizeumatheus/expo-todo-app"
   }
 }
