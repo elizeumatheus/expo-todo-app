@@ -1,15 +1,22 @@
 import { DefaultTheme } from 'styled-components/native'
 
-declare module 'styled-components' {
-  type ThemeColors = {
-    text: string
-  }
+import { ThemeColors, ThemeTypography } from '@/models/theme.model'
 
+declare module 'styled-components' {
   export interface DefaultTheme {
     background: string
     colors: ThemeColors
     isDark: boolean
+    typography: ThemeTypography
   }
+}
+
+const typography: ThemeTypography = {
+  sizes: {
+    large: '32px',
+    normal: '16px',
+    small: '12px',
+  },
 }
 
 const light: DefaultTheme = {
@@ -18,6 +25,7 @@ const light: DefaultTheme = {
     text: '#232525',
   },
   isDark: false,
+  typography,
 }
 
 const dark: DefaultTheme = {
@@ -26,6 +34,7 @@ const dark: DefaultTheme = {
     text: '#f5f5f5',
   },
   isDark: true,
+  typography,
 }
 
 export { light, dark }
